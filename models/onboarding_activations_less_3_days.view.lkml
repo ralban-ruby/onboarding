@@ -8,6 +8,7 @@ view: onboarding_activations_less_3_days {
   }
 
   dimension_group: activation_month {
+    label: "Month"
     type: time
     timeframes: [
       raw,
