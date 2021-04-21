@@ -2,13 +2,32 @@ view: onboarding_activations_less_3_days {
   sql_table_name: "ONBOARDING"."ONBOARDING_ACTIVATIONS_LESS_3DAYS"
     ;;
 
-  dimension: accounts {
-    type: number
-    sql: ${TABLE}."ACCOUNTS" ;;
+  dimension: account_id {
+    type: string
+    sql: ${TABLE}."ACCOUNT_ID" ;;
+  }
+
+  dimension: account_name {
+    type: string
+    sql: ${TABLE}."ACCOUNT_NAME" ;;
+  }
+
+  dimension_group: activation {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}."ACTIVATION_DATE" ;;
   }
 
   dimension_group: activation_month {
-    label: "Month"
     type: time
     timeframes: [
       raw,
@@ -23,13 +42,38 @@ view: onboarding_activations_less_3_days {
     sql: ${TABLE}."ACTIVATION_MONTH" ;;
   }
 
-  dimension: ratio {
+  dimension_group: onboarding {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}."ONBOARDING_DATE" ;;
+  }
+
+  dimension: product_c {
+    type: string
+    sql: ${TABLE}."PRODUCT_C" ;;
+  }
+
+  dimension: time_to_onboard {
     type: number
-    sql: ${TABLE}."RATIO" ;;
+    sql: ${TABLE}."TIME_TO_ONBOARD" ;;
+  }
+
+  dimension: total {
+    type: number
+    sql: ${TABLE}."TOTAL" ;;
   }
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [account_name]
   }
 }
