@@ -72,6 +72,11 @@ view: onboarding_activations_less_3_days {
     sql: ${TABLE}."RATIO" ;;
   }
 
+  dimension: total {
+    type: number
+    sql: ${TABLE}."TOTAL" ;;
+  }
+
   dimension: time_to_onboard {
     type: number
     sql: ${TABLE}."TIME_TO_ONBOARD" ;;
