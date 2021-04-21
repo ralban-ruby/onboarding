@@ -32,6 +32,31 @@ view: onboarding_mbg_detail {
     sql: ${TABLE}."TOTAL_ACCOUNTS" ;;
   }
 
+  dimension: ACCOUNT_ID {
+    type: string
+    sql: ${TABLE}."ACCOUNT_ID" ;;
+  }
+
+  dimension: ACCOUNT_NAME {
+    type: string
+    sql: ${TABLE}."ACCOUNT_NAME" ;;
+  }
+
+  dimension: OWNER_ID {
+    type: string
+    sql: ${TABLE}."OWNER_ID" ;;
+  }
+
+  dimension: OWNER {
+    type: string
+    sql: ${TABLE}."OWNER" ;;
+  }
+
+  dimension: Accounts {
+    type: number
+    sql: ${TABLE}."ACCOUNTS" ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
