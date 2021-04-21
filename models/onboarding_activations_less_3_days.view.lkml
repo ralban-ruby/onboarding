@@ -12,6 +12,11 @@ view: onboarding_activations_less_3_days {
     sql: ${TABLE}."ACCOUNT_NAME" ;;
   }
 
+  dimension: accounts {
+    type: number
+    sql: ${TABLE}."ACCOUNTS" ;;
+  }
+
   dimension_group: activation {
     type: time
     timeframes: [
@@ -62,14 +67,14 @@ view: onboarding_activations_less_3_days {
     sql: ${TABLE}."PRODUCT_C" ;;
   }
 
+  dimension: ratio {
+    type: number
+    sql: ${TABLE}."RATIO" ;;
+  }
+
   dimension: time_to_onboard {
     type: number
     sql: ${TABLE}."TIME_TO_ONBOARD" ;;
-  }
-
-  dimension: total {
-    type: number
-    sql: ${TABLE}."TOTAL" ;;
   }
 
   measure: count {
