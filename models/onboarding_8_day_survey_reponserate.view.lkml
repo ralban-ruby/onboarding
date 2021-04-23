@@ -32,6 +32,46 @@ view: onboarding_8_day_survey_reponserate {
     sql: ${TABLE}."TOTAL_RESPONSES" ;;
   }
 
+  dimension: Owner_ID {
+    type: string
+    sql: ${TABLE}."OWNER_ID" ;;
+  }
+
+  dimension: Owner_Name {
+    type: string
+    sql: ${TABLE}."Owner_Name" ;;
+  }
+
+  dimension: AskNicely_Tag_C {
+    type: string
+    sql: ${TABLE}."AskNicely_Tag_C" ;;
+  }
+
+  dimension: AskNicely_Account_C {
+    type: string
+    sql: ${TABLE}."AskNicely_Account_C" ;;
+  }
+
+  dimension: ASKNICELY_CONTACT_C {
+    type: string
+    sql: ${TABLE}."ASKNICELY_CONTACT_C" ;;
+  }
+
+  dimension: ASKNICELY_COMMENT_C  {
+    type: string
+    sql: ${TABLE}."ASKNICELY_COMMENT_C " ;;
+  }
+
+  dimension: ASKNICELY_QUESTIONID_C {
+    type: number
+    sql: ${TABLE}."ASKNICELY_QUESTIONID_C" ;;
+  }
+
+  dimension: ASKNICELY_SCORE_C  {
+    type: number
+    sql: ${TABLE}."ASKNICELY_SCORE_C " ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
